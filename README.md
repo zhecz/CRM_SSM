@@ -9,4 +9,4 @@ CRM is a customer relationship management system to help business owners easily 
 
 # Database Workflow
 
-![image](https://github.com/zhecz/Pictures/blob/master/CRM_SSM.jpeg)
+![image](https://github.com/zhecz/Pictures/blob/master/CRM_SSM_01.png)
