@@ -6,29 +6,43 @@ import com.bjpowernode.crm.utils.UUIDUtil;
 import com.bjpowernode.crm.workbench.dao.*;
 import com.bjpowernode.crm.workbench.domain.*;
 import com.bjpowernode.crm.workbench.service.ClueService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
+@Service("clueService")
 public class ClueServiceImpl implements ClueService {
 
     //线索相关表
-    private ClueDao clueDao = SqlSessionUtil.getSqlSession().getMapper(ClueDao.class);
-    private ClueActivityRelationDao clueActivityRelationDao = SqlSessionUtil.getSqlSession().getMapper(ClueActivityRelationDao.class);
-    private ClueRemarkDao clueRemarkDao = SqlSessionUtil.getSqlSession().getMapper(ClueRemarkDao.class);
+    @Autowired
+    private ClueDao clueDao;
+
+    @Autowired
+    private ClueActivityRelationDao clueActivityRelationDao;
+
+    @Autowired
+    private ClueRemarkDao clueRemarkDao;
 
     //客户相关表
-    private CustomerDao customerDao = SqlSessionUtil.getSqlSession().getMapper(CustomerDao.class);
-    private CustomerRemarkDao customerRemarkDao = SqlSessionUtil.getSqlSession().getMapper(CustomerRemarkDao.class);
+    @Autowired
+    private CustomerDao customerDao;
+    @Autowired
+    private CustomerRemarkDao customerRemarkDao;
 
     //联系人相关表
-    private ContactsDao contactsDao = SqlSessionUtil.getSqlSession().getMapper(ContactsDao.class);
-    private ContactsRemarkDao contactsRemarkDao = SqlSessionUtil.getSqlSession().getMapper(ContactsRemarkDao.class);
-    private ContactsActivityRelationDao contactsActivityRelationDao = SqlSessionUtil.getSqlSession().getMapper(ContactsActivityRelationDao.class);
+    @Autowired
+    private ContactsDao contactsDao;
+    @Autowired
+    private ContactsRemarkDao contactsRemarkDao;
+    @Autowired
+    private ContactsActivityRelationDao contactsActivityRelationDao;
 
     //交易相关表
-    private TranDao tranDao = SqlSessionUtil.getSqlSession().getMapper(TranDao.class);
-    private TranHistoryDao tranHistoryDao = SqlSessionUtil.getSqlSession().getMapper(TranHistoryDao.class);
+    @Autowired
+    private TranDao tranDao;
+    @Autowired
+    private TranHistoryDao tranHistoryDao;
 
     public boolean save(Clue c) {
 
