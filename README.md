@@ -10,3 +10,18 @@ CRM is a customer relationship management system to help business owners easily 
 # Database Workflow
 
 ![image](https://github.com/zhecz/Pictures/blob/master/CRM_SSM_01.png)
+
+# MVC Architecture
+
+## 1. DAO Layer
+
+- settings
+
+  ![image](https://github.com/zhecz/Pictures/blob/master/UML_DAO_Settings.png)
+
+- workbench
+
+  ![image](https://github.com/zhecz/Pictures/blob/master/UML_Dao_workbench.png)
+
+
+
