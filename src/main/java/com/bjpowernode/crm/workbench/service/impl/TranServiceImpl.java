@@ -10,19 +10,25 @@ import com.bjpowernode.crm.workbench.domain.Customer;
 import com.bjpowernode.crm.workbench.domain.Tran;
 import com.bjpowernode.crm.workbench.domain.TranHistory;
 import com.bjpowernode.crm.workbench.service.TranService;
+//import org.graalvm.compiler.lir.LIRInstruction;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Author 北京动力节点
- */
+@Service("tranService")
 public class TranServiceImpl implements TranService {
 
-    private TranDao tranDao = SqlSessionUtil.getSqlSession().getMapper(TranDao.class);
-    private TranHistoryDao tranHistoryDao = SqlSessionUtil.getSqlSession().getMapper(TranHistoryDao.class);
-    private CustomerDao customerDao = SqlSessionUtil.getSqlSession().getMapper(CustomerDao.class);
+    @Autowired
+    private TranDao tranDao;
+
+    @Autowired
+    private TranHistoryDao tranHistoryDao;
+
+    @Autowired
+    private CustomerDao customerDao;
 
     public boolean save(Tran t, String customerName) {
 

@@ -1,17 +1,15 @@
-<%@ page import="java.util.List" %>
 <%@ page import="com.bjpowernode.crm.settings.domain.DicValue" %>
-<%@ page import="java.util.Map" %>
-<%@ page import="java.util.Set" %>
 <%@ page import="com.bjpowernode.crm.workbench.domain.Tran" %>
+<%@ page import="java.util.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath() + "/";
 
 	//准备字典类型为stage的字典值列表
-	List<DicValue> dvList = (List<DicValue>)application.getAttribute("stageList");
+	//List<DicValue> dvList = (List<DicValue>)application.getAttribute("stageList");
+	List<DicValue> dvList = (List<DicValue>)request.getAttribute("stageList");
+	Map<String,String> pMap = (Map<String,String>)request.getAttribute("p");
 
-	//准备阶段和可能性之间的对应关系
-	Map<String,String> pMap = (Map<String,String>)application.getAttribute("pMap");
 
 	//根据pMap准备pMap中的key集合
 	Set<String> set = pMap.keySet();
